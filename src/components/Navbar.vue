@@ -1,0 +1,200 @@
+<script>
+  import ServicesService from '../services/services'
+
+  export default {
+    name: "Navbar",
+
+    data: function(){
+      return {
+        services: [],
+        isOpen: false,
+        mobileNav: false,
+        isFixed: false,
+        currentRoute: ''
+      }
+    },
+
+    ready: function() {
+
+      var self = this;
+
+      this.currentRoute = this.$route.name;
+
+      var services  = ServicesService.getAllServices('').services;
+      this.$set('services', services);
+
+      var navbar = document.getElementById("mainNavbar"),
+          topbar = document.getElementById("topBar"),
+          windowWidth = window.innerWidth;
+
+      if (windowWidth < 980) {
+        console.log('smaller then 980 baby' + self.mobileNav);
+
+        self.mobileNav = true;
+        navbar.className += ' mobile-header';
+        topbar.className += ' mobile-header';
+        console.log('smaller then 980 baby' + self.mobileNav);
+
+      }
+
+      window.addEventListener('scroll', function(e){
+
+        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+            shrinkOn = 500,
+            navbar = document.getElementById("mainNavbar"),
+            topbar = document.getElementById("topBar");
+
+        if (self.mobileNav == false) {
+          if (distanceY > shrinkOn) {
+             if (self.isFixed == false) {
+               navbar.className += ' shrink';
+               topbar.className += ' shrink';
+               self.isFixed = true;
+             }
+          } else if ((' ' + navbar.className + ' ').indexOf(' ' + 'shrink' + ' ') > -1) {
+             navbar.classList.remove("shrink");
+             topbar.classList.remove("shrink");
+             self.isFixed = false;
+          }
+        } else {
+          if (distanceY > shrinkOn) {
+             if (self.isFixed == false) {
+
+               self.isFixed = true;
+             }
+          } else if ((' ' + navbar.className + ' ').indexOf(' ' + 'shrink' + ' ') > -1) {
+
+             self.isFixed = false;
+          }
+        }
+       });
+
+      window.addEventListener('resize', function(){
+
+         if (window.innerWidth < 980) {
+           console.log('smaller then 980 baby' + self.mobileHeader);
+           if (self.mobileNav == false) {
+             navbar.className += ' mobile-header';
+             topbar.className += ' mobile-header';
+             self.mobileNav = true;
+           }
+         } else if ((' ' + navbar.className + ' ').indexOf(' ' + 'mobile-header' + ' ') > -1) {
+           console.log('bigger then 980 baby' + self.mobileHeader);
+           navbar.classList.remove("mobile-header");
+           topbar.classList.remove("mobile-header");
+           self.mobileNav = false;
+         }
+      });
+
+    },
+
+    methods: {
+      toggleMenu: function() {
+        console.log('boom baby');
+        var self = this;
+
+        if (this.isOpen == false) {
+          console.log('its false buddy' + this.isOpen);
+          self.isOpen = true;
+        } else {
+          self.isOpen = false;
+        }
+      }
+    }
+  }
+</script>
+
+<template>
+  <div v-if="!mobileNav" id="topBar" class="top-bar">
+    <div class="top-bar-left">
+
+      <div class="center-cta-arrow-wrapper">
+        <div class="cta-arrow">
+          <img src="/imgs/top-bar-arrow.png">
+        </div>
+      </div>
+
+      <p>1-Hour Response Time</p>
+
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><span><i class="fa fa-phone"></i> 24/7 Support:</span> (954) 000-0000</li>
+        <li><i class="fa fa-twitter"></i></li>
+        <li><i class="fa fa-facebook"></i> </li>
+        <li><i class="fa fa-instagram"></i> </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="mainNavbar" class="main-navbar">
+    <div v-if="!mobileNav ">
+      <div v-if="!isFixed" class="row">
+        <div class="medium-4 columns">
+          <ul class="menu menu-left">
+            <li>About Us</li>
+            <li><i class="fa fa-angle-down"></i> Our Services
+              <div class="drop-down-wrapper">
+                <div class="drop-down">
+                  <span v-for="service in services[0]"><a v-link="'/services/' + service.title | serviceUrl"><p ><i class="fa fa-circle"></i> {{service.title}}</p></a></span>                </div>
+                <div class="clearfix"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="medium-4 columns">
+          <div class="logo">
+            <img src="/imgs/logo.png" />
+          </div>
+        </div>
+        <div class="medium-4 columns">
+          <ul class="menu menu-right">
+            <li><a v-link="'contact'">Contact Us</a></li>
+            <li>Help Desk</li>
+          </ul>
+        </div>
+      </div>
+
+      <div v-if="isFixed" class="row">
+        <div class="medium-12 columns">
+          <div class="logo">
+            <img src="/imgs/logo-dark.png" />
+          </div>
+          <ul class="menu menu-left">
+            <li>About Us</li>
+            <li><i class="fa fa-angle-down"></i> Our Services
+              <div class="drop-down-wrapper">
+                <div class="drop-down">
+                  <span v-for="service in services[0]"><a v-link="'/services/' + service.title | serviceUrl"><p ><i class="fa fa-circle"></i> {{service.title}}</p></a></span>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </li>
+            <li><a v-link="'contact'">Contact Us</a></li>
+            <li>Help Desk</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-nav" v-if="mobileNav">
+      <div class="logo">
+        <img src="/imgs/logo-dark.png" />
+      </div>
+      <div class="mobile-menu">
+        <button @click="toggleMenu"><i class="fa fa-bars"></i></button>
+        <div v-if="isOpen" class="menu-wrapper">
+          <div  @click="toggleMenu" class="page-overlay">
+          </div>
+          <ul class="menu menu-left">
+            <li><i class="fa fa-home"></i> <p>Home</p></li>
+            <li><i class="fa fa-users"></i> <p>About Us</p></li>
+            <li><i class="fa fa-server"></i> <p>Our Services</p></li>
+            <li><i class="fa fa-phone"></i> <p>Contact Us</p></li>
+            <li><i class="fa fa-info"></i> <p>Help Desk</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
