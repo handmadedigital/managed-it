@@ -132,7 +132,7 @@
       <div v-if="!isFixed" class="row">
         <div class="medium-4 columns">
           <ul class="menu menu-left">
-            <li>About Us</li>
+            <li><a v-link="'/about'">About Us</a></li>
             <li><i class="fa fa-angle-down"></i> Our Services
               <div class="drop-down-wrapper">
                 <div class="drop-down">
@@ -144,13 +144,13 @@
         </div>
         <div class="medium-4 columns">
           <div class="logo">
-            <img src="/imgs/logo.png" />
+            <a v-link="'/home'"><img src="/imgs/logo.png" /></a>
           </div>
         </div>
         <div class="medium-4 columns">
           <ul class="menu menu-right">
-            <li><a v-link="'contact'">Contact Us</a></li>
-            <li>Help Desk</li>
+            <li><a v-link="'/contact'">Contact Us</a></li>
+            <li><a v-link="'/services/helpDesk'">Help Desk</a></li>
           </ul>
         </div>
       </div>
@@ -158,10 +158,10 @@
       <div v-if="isFixed" class="row">
         <div class="medium-12 columns">
           <div class="logo">
-            <img src="/imgs/logo-dark.png" />
+            <a v-link="'/home'"><img src="/imgs/logo-dark.png" /></a>
           </div>
           <ul class="menu menu-left">
-            <li>About Us</li>
+            <li><a v-link="'/about'">About Us</a></li>
             <li><i class="fa fa-angle-down"></i> Our Services
               <div class="drop-down-wrapper">
                 <div class="drop-down">
@@ -170,8 +170,8 @@
                 <div class="clearfix"></div>
               </div>
             </li>
-            <li><a v-link="'contact'">Contact Us</a></li>
-            <li>Help Desk</li>
+            <li><a v-link="'/contact'">Contact Us</a></li>
+            <li><a v-link="'/services/helpDesk'">Help Desk</a></li>
           </ul>
         </div>
       </div>
