@@ -15,7 +15,7 @@
           amounts of time, money, and manpower to manage effectively.</p>
         </div>
       </div>
-      <div class="medium-12 columns">
+      <div class="small-12 medium-12 columns">
         <div class="bullet-points-wrapper">
           <ul>
             <li><i class="fa fa-circle"></i> <p>Allow your customers to request assistance through a secure, self-service portal.</p></li>
@@ -25,7 +25,7 @@
           <div class="clearfix"></div>
         </div>
         <div class="center">
-          <button class="round-btn lg orange">Get Help Now!</button>
+          <button v-link="'/contact'" class="round-btn lg orange">Get Help Now!</button>
         </div>
       </div>
     </div>

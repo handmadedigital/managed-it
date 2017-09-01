@@ -27,5 +27,12 @@ gulp.task('build.index', function(){
     .pipe(gulp.dest('./dist'));
 });
 
+// Copy public folder
+gulp.task('build.public', function(){
+  return gulp.src('./public/**')
+  .pipe(gulp.dest('./dist/public'));
+});
+
+
 // Default task
-gulp.task('default', ['webpack', 'webserver', 'build.index']);
+gulp.task('default', ['webpack', 'webserver', 'build.index', 'build.public']);

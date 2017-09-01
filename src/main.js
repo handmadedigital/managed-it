@@ -7,13 +7,6 @@ import Router from 'vue-router'
 import App from './components/App.vue'
 import Home from './components/Home.vue'
 import About from './components/About.vue'
-import Quote from './components/Quote.vue'
-import ManagedItServices from './components/services/ManagedItServices.vue'
-import ManagedBackup from './components/services/ManagedBackup.vue'
-import ItSupport from './components/services/ItSupport.vue'
-import NetworkSupport from './components/services/NetworkSupport.vue'
-import HelpDesk from './components/services/HelpDesk.vue'
-import ServiceTemplate from './components/services/ServiceTemplate.vue'
 import Services from './components/Services.vue'
 import Contact from './components/Contact.vue'
 
@@ -23,8 +16,6 @@ Vue.use(Resource);
 
 // Set up a new router
 var router = new Router({
-//  hashbang:false,
-//  history:true
 });
 
 Vue.filter('firstWord', function (value) {
@@ -68,34 +59,6 @@ router.map({
   '/about':{
     name: 'about',
     component: About
-  },
-  '/quote':{
-    name: 'quote',
-    component: Quote
-  },
-  '/managed-it-services':{
-    name: 'managed-it-services',
-    component: ManagedItServices
-  },
-  '/managed-backup':{
-    name: 'managed-backup',
-    component: ManagedBackup
-  },
-  '/it-support':{
-    name: 'it-support',
-    component: ItSupport
-  },
-  '/network-support':{
-    name: 'network-support',
-    component: NetworkSupport
-  },
-  '/help-desk':{
-    name: 'help-desk',
-    component: HelpDesk
-  },
-  '/service-template':{
-    name: 'service-template',
-    component: ServiceTemplate
   },
   '/services/:service':{
     name: 'services',

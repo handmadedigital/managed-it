@@ -10,7 +10,7 @@
       <div class="medium-12 columns">
         <div class="center">
           <h2>Wouldn't your business benefit from more structured IT?</h2>
-          <button class="round-btn lg orange">Get Your Free Estimate &amp; Consultation Today</button>
+          <button v-link="'/contact'" class="round-btn lg orange">Get Your Free Estimate &amp; Consultation Today</button>
         </div>
       </div>
     </div>

@@ -60,23 +60,23 @@
         <div class="small-12 small-push-12 medium-8 large-6 column">
           <ul>
             <li>
-               <h3><i class="fa fa-check-square-o"></i> Network Support</h3>
-              <p>By hiring a Managed IT Services Provider, you gain the freedom to focus on what you do best  By hiring a Managed IT Services Provider, you gain the freedom to focus on what you do best.</p>
+               <h3><i class="fa fa-check-square-o"></i> Managed IT Services</h3>
+              <p>Instead of relying on a single employee who may or may not be with your firm for the long-term, hire an entire team of technological experts that can expand and grow along with your business needs.</p>
             </li>
             <li>
-              <h3> <i class="fa fa-check-square-o"></i> Network Support</h3>
-              <p>By hiring a Managed IT Services Provider, you gain the freedom to focus on what you do best  By hiring a Managed IT Services Provider, you gain the freedom to focus on what you do best.</p>
+              <h3> <i class="fa fa-check-square-o"></i> Managed Workstation</h3>
+              <p>Instead of assigning a single employee the responsibility of resolving the varying computer issues for their entire staff, businesses choose to hire a professional provider of Managed Workstation Services.</p>
             </li>
             <li>
-              <h3><i class="fa fa-check-square-o"></i> Network Support</h3>
-              <p>By hiring a Managed IT Services Provider, you gain the freedom to focus on what you do best  By hiring a Managed IT Services Provider, you gain the freedom to focus on what you do best.</p>
+              <h3><i class="fa fa-check-square-o"></i> Help Desk</h3>
+              <p>As companies continue to expand, grow, and become more profitable, the need for consistent and timely Help Desk services from a team of knowledgeable professionals becomes more critical. </p>
             </li>
             <li>
               <h3><i class="fa fa-check-square-o"></i> Network Support</h3>
               <p>By hiring a Managed IT Services Provider, you gain the freedom to focus on what you do best  By hiring a Managed IT Services Provider, you gain the freedom to focus on what you do best.</p>
             </li>
           </ul>
-          <button class="round-btn lg orange">Learn More</button>
+          <button v-link="'/contact'" class="round-btn lg orange">Learn More</button>
         </div>
         <div v-if="!isMobile" class="small-12 small-pull-12 medium-4 large-6 column">
           <div class="comp-img-3d-wrapper">

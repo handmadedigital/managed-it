@@ -94,8 +94,13 @@
         </div>
       </div>
     </div>
-    <div class="angled-banner-bottom">
+
+    <div class="angled-banner-bottom no-mobile">
       <img src="/imgs/services-banner-bottom-angle.png">
+    </div>
+
+    <div class="angled-banner-bottom no-desktop">
+      <img src="/imgs/main-banner-bottom-angle.png">
     </div>
   </div>
 </template>

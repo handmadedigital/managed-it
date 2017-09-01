@@ -1,6 +1,18 @@
 <script>
   export default {
-    name: "Team"
+    name: "Team",
+
+    props: ['link'],
+
+    data: function() {
+      return {
+        routeName: ''
+      }
+    },
+
+    ready: function() {
+      this.routeName = this.$route.name;
+    }
   }
 </script>
 
@@ -17,42 +29,37 @@
           <div class="clearfix"></div>
         </div>
       </div>
-      <div class="medium-12 columns">
+      <div class="small-12 medium-12 columns">
         <div class="team-photos-wrapper">
           <div class="team-member-box">
             <img src="/imgs/team-member-1.jpg">
-            <h5>Lizzie Hamilton</h5>
-            <em>CEO / Chief Editor</em>
+            <h5>Jim Brennan</h5>
+            <em>President</em>
             <div class="under-line"></div>
           </div>
           <div class="team-member-box">
             <img src="/imgs/team-member-1.jpg">
-            <h5>Lizzie Hamilton</h5>
-            <em>CEO / Chief Editor</em>
+            <h5>Brian Jeschonek</h5>
+            <em>Senior IT Technician</em>
             <div class="under-line"></div>
           </div>
           <div class="team-member-box">
             <img src="/imgs/team-member-1.jpg">
-            <h5>Lizzie Hamilton</h5>
-            <em>CEO / Chief Editor</em>
+            <h5>Justin Hornung</h5>
+            <em>IT Technician</em>
             <div class="under-line"></div>
           </div>
           <div class="team-member-box">
             <img src="/imgs/team-member-1.jpg">
-            <h5>Lizzie Hamilton</h5>
-            <em>CEO / Chief Editor</em>
-            <div class="under-line"></div>
-          </div>
-          <div class="team-member-box">
-            <img src="/imgs/team-member-1.jpg">
-            <h5>Lizzie Hamilton</h5>
-            <em>CEO / Chief Editor</em>
+            <h5>Mike Maguire</h5>
+            <em>IT Technician</em>
             <div class="under-line"></div>
           </div>
           <div class="clearfix"></div>
         </div>
         <div class="center">
-          <button class="round-btn lg orange">Get To Know Us!</button>
+          <button v-if="routeName !== 'about'" v-link="'/about'" class="round-btn lg orange">Get To Know Us!</button>
+          <button v-if="routeName == 'about'" v-link="'/contact'" class="round-btn lg orange">Get To Know Us!</button>
         </div>
       </div>
     </div>

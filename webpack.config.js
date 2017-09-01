@@ -1,4 +1,5 @@
-var webpack = require('webpack')
+var webpack = require('webpack');
+
 
 module.exports =  {
   entry: [
@@ -12,6 +13,9 @@ module.exports =  {
   watch: true,
   module: {
     loaders: [
+      {
+        test: /\.json$/, loader: 'json-loader'
+      },
       {
         test: /\.js$/,
         // excluding some local linked packages.
@@ -35,5 +39,10 @@ module.exports =  {
   },
   resolve: {
     modulesDirectories: ['node_modules']
+  },
+  node: {
+    fs: "empty",
+    net: "empty",
+    tls: "empty"
   }
 }

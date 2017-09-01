@@ -93,18 +93,18 @@
 </script>
 
 <template>
-
-  <main-banner title="We Take Care of All  Your Technical Needs" mainBg="/imgs/main-banner-img.jpg" mobileBg="/imgs/main-banner-img-mobile.jpg">
-    <p>By hiring a Managed IT Services Provider, you gain the freedom to focus on what you do best –
-    running your business. The IT Department is your most valuable asset, but it also requires enormous
-    amounts of time, money, and manpower to manage effectively.</p>
-    <button class="round-btn lg "> Contact Us Today!</button>
-  </main-banner>
-  <services></services>
-  <support></support>
-  <topics></topics>
-  <help></help>
-  <team></team>
-  <cta></cta>
-
+  <div>
+    <main-banner title="We Take Care of All  Your Technical Needs" mainBg="/imgs/main-banner-img.jpg" mobileBg="/imgs/main-banner-img-mobile.jpg">
+      <p>By hiring a Managed IT Services Provider, you gain the freedom to focus on what you do best –
+      running your business. The IT Department is your most valuable asset, but it also requires enormous
+      amounts of time, money, and manpower to manage effectively.</p>
+      <button v-link="'/contact'" class="round-btn lg "> Contact Us Today!</button>
+    </main-banner>
+    <services></services>
+    <support></support>
+    <topics></topics>
+    <help></help>
+    <team></team>
+    <cta></cta>
+  </div>
 </template>
