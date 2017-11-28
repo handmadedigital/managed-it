@@ -18,7 +18,6 @@
 
             var nameInput = document.getElementById('name-input');
             var emailInput = document.getElementById('email-input');
-
             nameInput.onfocus = function() {
                 nameInput.style.border = "1px solid #cacaca";
             };
@@ -171,29 +170,50 @@
           </p>
         </div>
       </div>
-      <div class="small-12 large-6 columns">
+      <div  id="mc_embed_signup" class="small-12 large-6 columns">
 
-        <form method="post" action="/managed/public/send-contact-form.php">
+        <form  action="https://managedservicesit.us16.list-manage.com/subscribe/post?u=a43632a9019cf808329db35c7&amp;id=d8032fde44" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
           <div v-if="formSent" class="success-message">
             Thank you, your submission was sent succesfully.
             <span v-on:click="closeBox" class="close-box">X</span>
           </div>
           <div class="medium-6 columns">
-            <input id="name-input" type="text" name="first_name" v-model="userInfo.name" placeholder="name">
+            <input placeholder="First Name" type="text" name="FNAME" id="mce-FNAME" >
           </div>
           <div class="medium-6 columns">
-            <input id="email-input" type="email" name="email" v-model="userInfo.email" placeholder="email">
+            <input placeholder="Last Name" type="text" name="LNAME" id="mce-LNAME" >
           </div>
           <div class="medium-12 columns">
-            <input type="tel" name="telephone" v-model="userInfo.phone" placeholder="phone">
+            <input placeholder="Email" type="email" name="EMAIL" class="required email" id="mce-EMAIL">
+          </div>
+          <div class="phonefield phonefield-us">
+            <div class="medium-4 columns">
+                  <span class="phonearea"><input class="phonepart required" pattern="[0-9]*" id="mce-MMERGE3-area" name="MMERGE3[area]" maxlength="3" size="3" value="" type="text" placeholder="(XXX)"></span>
+            </div>
+            <div class="medium-4 columns">
+                  <span class="phonedetail1"><input class="phonepart required" pattern="[0-9]*" id="mce-MMERGE3-detail1" name="MMERGE3[detail1]" maxlength="3" size="3" value="" type="text" placeholder="(XXX)"></span>
+            </div>
+            <div class="medium-4 columns">
+                  <span class="phonedetail2"><input class="phonepart required" pattern="[0-9]*" id="mce-MMERGE3-detail2" name="MMERGE3[detail2]" maxlength="4" size="4" value="" type="text" placeholder="(XXXX)"></span>
+            </div>
           </div>
           <div class="medium-12 columns">
-            <textarea name="comments" v-model="userInfo.message" placeholder="Your Message"></textarea>
+            <textarea name="MMERGE4" id="mce-MMERGE4" placeholder="Reason for Contacting MSIT"></textarea>
+          </div>
+          <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
           </div>
 
-          <button type="submit" class="round-btn lg orange">Contact Us</button>
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a43632a9019cf808329db35c7_d8032fde44" tabindex="-1" value=""></div>
+          <button type="submit" class="round-btn lg orange" id="mc-embedded-subscribe">Contact Us</button>
 
         </form>
+
+        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+        <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[4]='MMERGE4';ftypes[4]='text';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='MMERGE3';ftypes[3]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+
+<!--End mc_embed_signup-->
       </div>
     </div>
   </div>
