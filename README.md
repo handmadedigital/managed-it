@@ -13,8 +13,8 @@ It is something similar to the Vuejs Vue loader example but it uses Gulp.
 **Note** that this seed project requires node v4.x.x or higher and npm 3.x.x.
 
 ```bash
-git clone https://github.com/rodzzlessa24/vue-webgulp.git
-cd vue-webgulp
+git clone https://github.com/handmadedigital/managed-it.git
+cd managed-it
 npm i   # or `npm run reinstall` if you get an error
 gulp     # start app
 ```
